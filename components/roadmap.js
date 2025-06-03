@@ -1,4 +1,6 @@
 export function renderRoadmap() {
+  const section = document.createElement('section');
+  section.id = 'roadmap';
   const div = document.createElement('div');
   div.style.cssText = `
     position: absolute;

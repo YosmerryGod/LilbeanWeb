@@ -42,6 +42,7 @@ export function renderCommunity() {
 
   // === Section Community ===
   const section = document.createElement('section');
+  section.id = 'community';
   section.style.cssText = `
     width: 100%; background: #001d3d; color: white; display: flex; flex-wrap: wrap;
     justify-content: space-around; padding: 4rem 2rem; box-sizing: border-box; font-family: 'Poppins', sans-serif;
@@ -86,18 +87,25 @@ export function renderCommunity() {
   const socialIcons = document.createElement('div');
   socialIcons.style.cssText = `display: flex; gap: 1rem; justify-content: center;`;
   const socials = [
-    { img: './assets/telegram1.png', alt: 'Telegram' },
-    { img: './assets/twitter1.png', alt: 'Twitter' },
-    { img: './assets/instagram1.png', alt: 'Instagram' }
-  ];
-  socials.forEach(social => {
-    const iconLink = document.createElement('a'); iconLink.href = '#'; iconLink.target = '_blank';
-    const iconImg = document.createElement('img');
-    iconImg.src = social.img; iconImg.alt = social.alt;
-    iconImg.classList.add('social-icon'); // Tambahkan class untuk efek hover
-    iconLink.appendChild(iconImg);
-    socialIcons.appendChild(iconLink);
-  });
+  { href: 'https://twitter.com/lilbeanBSC', img: './assets/twitter1.png', alt: 'Twitter' },
+  { href: 'https://t.me/lilbeanFun', img: './assets/telegram1.png', alt: 'Telegram' },
+  { href: 'https://instagram.com/LilbeanFun', img: './assets/instagram1.png', alt: 'Instagram' }
+];
+
+socials.forEach(social => {
+  const iconLink = document.createElement('a');
+  iconLink.href = social.href;            // ✅ Link asli
+  iconLink.target = '_blank';             // Buka di tab baru
+
+  const iconImg = document.createElement('img');
+  iconImg.src = social.img;
+  iconImg.alt = social.alt;
+  iconImg.classList.add('social-icon');   // Class untuk efek hover
+
+  iconLink.appendChild(iconImg);
+  socialIcons.appendChild(iconLink);
+});
+
 
   socialSection.append(followTitle, socialIcons);
   section.append(leftSection, socialSection);

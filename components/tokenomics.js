@@ -1,4 +1,6 @@
 export function renderTokenomics() {
+  const section = document.createElement('section');
+  section.id = 'tokenomics';
   const div = document.createElement('div');
   div.style.cssText = `
     position: absolute;

@@ -2,6 +2,9 @@ import { renderRoadmap } from './roadmap.js';
 import { renderTokenomics } from './tokenomics.js';
 
 export function renderTokenInfo() {
+  const section = document.createElement('section');
+  section.id = 'born';
+
   const container = document.createElement('div');
   container.style.cssText = `
     width: 100%;

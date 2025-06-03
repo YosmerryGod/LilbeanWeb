@@ -34,6 +34,7 @@ export function renderAbout() {
   document.head.appendChild(style);
 
   const section = document.createElement('section');
+  section.id = 'about';
   section.style.cssText = `
     width: 102%;
     min-height: 100vh;

@@ -1,4 +1,6 @@
 export function renderGallery() {
+  const section = document.createElement('section');
+  section.id = 'gallery';
   const container = document.createElement('div');
   container.style.cssText = `
     width: 100vw;

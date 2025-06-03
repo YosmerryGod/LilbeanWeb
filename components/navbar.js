@@ -13,19 +13,13 @@ export function renderNavbar() {
       50% { transform: translateY(-8px); }
       100% { transform: translateY(0px); }
     }
-    .float-icon {
-      animation: float 3s ease-in-out infinite;
-    }
-    .bounce-on-click {
-      animation: bounce 0.4s ease;
-    }
-    button {
-      position: relative; overflow: hidden; z-index: 0;
-    }
+    .float-icon { animation: float 3s ease-in-out infinite; }
+    .bounce-on-click { animation: bounce 0.4s ease; }
+    button { position: relative; overflow: hidden; z-index: 0; }
     button::before {
       content: ''; position: absolute; left: 0; bottom: 0;
       width: 100%; height: 0%;
-      background: linear-gradient(to top, rgb(15, 16, 16),rgb(94, 93, 90));
+      background: linear-gradient(to top, rgb(15, 16, 16), rgb(94, 93, 90));
       z-index: -1; transition: height 0.4s ease;
     }
     button:hover::before { height: 100%; }
@@ -77,7 +71,6 @@ export function renderNavbar() {
     lastScrollY = currentScrollY;
   });
 
-  // === Overlay ===
   const overlay = document.createElement('div');
   overlay.style.cssText = `
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -134,18 +127,36 @@ export function renderNavbar() {
     el.onclick = () => {
       el.classList.add('bounce-on-click');
       setTimeout(() => el.classList.remove('bounce-on-click'), 400);
+
+      const target = item.text.toLowerCase();
+      const section = document.getElementById(target);
+
+      if (item.text === 'ROADMAP') {
+        import('.roadmap.js').then(mod => {
+          openSidebar(mod.renderRoadmapMobile());
+        });
+      } else if (item.text === 'TOKENOMICS') {
+        import('.tokenomics.js').then(mod => {
+          openSidebar(mod.renderTokenomicsMobile());
+        });
+      } else if (section) {
+        sidebar.style.top = '-60vh';
+        overlay.style.display = 'none';
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
     };
     sidebar.appendChild(el);
   });
 
   const socialLinks = [
-    { href: 'https://twitter.com/yourhandle', img: './assets/twitter.png', alt: 'Twitter', top: 40, left: 750, size: 175 },
-    { href: 'https://t.me/yourchannel', img: './assets/telegram.png', alt: 'Telegram', top: 120, left: 925, size: 160 },
-    { href: 'https://instagram.com/yourhandle', img: './assets/instagram.png', alt: 'Instagram', top: -10, left: 900, size: 160 },
+    { href: 'https://twitter.com/lilbeanBSC', img: './assets/twitter.png', alt: 'Twitter', top: 40, left: 750, size: 175 },
+    { href: 'https://t.me/lilbeanfun', img: './assets/telegram.png', alt: 'Telegram', top: 120, left: 925, size: 160 },
+    { href: 'https://instagram.com/lilbeanFun', img: './assets/instagram.png', alt: 'Instagram', top: -10, left: 900, size: 160 },
   ];
 
   socialLinks.forEach(link => {
-    const a = document.createElement('a'); a.href = link.href; a.target = '_blank';
+    const a = document.createElement('a');
+    a.href = link.href; a.target = '_blank';
     const img = document.createElement('img');
     img.src = link.img; img.alt = link.alt;
     img.classList.add('float-icon');
@@ -169,4 +180,44 @@ export function renderNavbar() {
   };
 
   rightButton.onclick = () => { renderSwap(); };
+
+  function openSidebar(node) {
+    let side = document.getElementById('popup-sidebar');
+    if (!side) {
+      side = document.createElement('div');
+      side.id = 'popup-sidebar';
+      side.style.cssText = `
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100%;
+        background: white;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 9999;
+        overflow-y: auto;
+      `;
+      document.body.appendChild(side);
+    }
+
+    side.innerHTML = '';
+    const close = document.createElement('button');
+    close.textContent = '✖';
+    close.style.cssText = `
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+    `;
+    close.onclick = () => side.style.transform = 'translateX(100%)';
+
+    side.appendChild(close);
+    side.appendChild(node);
+    side.style.transform = 'translateX(0)';
+  }
 }
