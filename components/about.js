@@ -78,7 +78,7 @@ export function renderAbout() {
   // === KANAN (Deskripsi Text)
   const right = document.createElement('div');
   right.style.cssText = `
-    flex: 1.2;
+    flex: 1.15;
     color: white;
     font-size: 1.6vw;
     font-weight: 600;
@@ -87,11 +87,11 @@ export function renderAbout() {
   `;
 
   right.innerHTML = `
-    Lil Bean is not just a coin.<br/>
-    He’s a golden bean with a dumb smile, zero roadmap, and too much confidence.<br/>
-    Powered by community. Fueled by memes. Backed by absolutely nothing.<br/><br/>
-    No promises. No team. Just vibes.<br/>
-    If you’re here, you’re early. If you’re holding,<br/> you’re family.
+    LilBean isn't just a token — he's the mascot of an AI-powered, meme-fueled crypto revolution.<br/>
+Born from chaos and built on BNB, LilBean represents the spirit of decentralization, humor, and fearless experimentation.<br/><br/>
+There’s no VC, no CEO, no fancy headquarters — only memes, community, and autonomous AI driving it forward.<br/><br/>
+Whether you’re here to stake, laugh, build, or just hold, welcome to the beanverse.
+
   `;
 
   // === MASCOT DI POJOK KANAN BAWAH

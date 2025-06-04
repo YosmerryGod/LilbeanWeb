@@ -43,8 +43,27 @@ export function renderTokenInfo() {
     text-align: center; font-size: 0.85rem; max-width: 650px; margin: 0 auto 1rem auto; line-height: 1.5;
   `;
   const videoSection = document.createElement('div');
-  videoSection.style.cssText = `text-align: center; margin-bottom: 2rem;`;
-  videoSection.innerHTML = `<video style="width: 45%; height: auto;" controls><source src="./assets/video/bean.mp4" type="video/mp4"></video>`;
+videoSection.style.cssText = `
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+`;
+const video = document.createElement('video');
+video.controls = true;
+video.style.cssText = `
+  max-width: 90%;
+  width: 500px;
+  height: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  border-radius: 12px;
+`;
+const source = document.createElement('source');
+source.src = './assets/video/bean.mp4';
+source.type = 'video/mp4';
+video.appendChild(source);
+videoSection.appendChild(video);
+
 
   container.appendChild(title);
   container.appendChild(description);
@@ -81,7 +100,7 @@ export function renderTokenInfo() {
     isDragging = false; startX = null;
   });
   overlay.addEventListener('click', () => {
-    sidebarRoadmap.style.left = '-63%'; sidebarTokenomic.style.right = '-63%'; overlay.style.display = 'none';
+    sidebarRoadmap.style.left = '-58%'; sidebarTokenomic.style.right = '-63%'; overlay.style.display = 'none';
   });
 
   document.body.appendChild(container);

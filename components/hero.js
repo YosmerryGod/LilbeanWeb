@@ -35,11 +35,11 @@ export function renderHero() {
 
   const desc = document.createElement('p');
   desc.innerHTML = `
-    Born to vibe. Minted to meme.<br/>
-    No tax. No boss. No problem.
+    BUILT ON BNB. ENHANCED BY AI.<br/>
+POWERED BY MEMES. GOVERNED BY CHAOS.
   `;
   desc.style.cssText = `
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 0;
     color: black;
     font-weight: 10;

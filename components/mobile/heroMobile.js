@@ -39,8 +39,8 @@ export function renderHeroMobile() {
 
   const desc = document.createElement('p');
   desc.innerHTML = `
-    Born to vibe. Minted to meme.<br/>
-    No tax. No boss. No problem.
+    BUILT ON BNB. ENHANCED BY AI.<br/>
+POWERED BY MEMES. GOVERNED BY CHAOS.
   `;
   desc.style.cssText = `
     font-size: 1.1rem;
@@ -125,7 +125,7 @@ export function renderHeroMobile() {
     marginLeft: -120
   },
   {
-    src: './assets/mascot4.png',
+    src: './assets/mascot5.png',
     size: 210,
     zIndex: 10,
     marginLeft: -130

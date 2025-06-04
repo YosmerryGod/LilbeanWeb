@@ -206,7 +206,15 @@ export function renderNavbarMobile() {
       }
     },
     { text: 'GALLERY' },
-    { text: 'WHITEPAPER' },
+    {
+      text: 'WHITEPAPER',
+      custom: () => {
+        import('../whitepaper.js').then(mod => {
+          history.pushState(null, '', '/whitepaper');
+          mod.renderWhitepaper();
+        });
+      }
+    },
     { text: 'BUY $BEAN', action: renderSwap }
   ];
 
@@ -216,8 +224,8 @@ export function renderNavbarMobile() {
     el.className = 'menu-item';
     el.onclick = () => {
       closeMenu();
-      if (action) action();
-      else if (custom) custom();
+      if (custom) custom();
+      else if (action) action();
       else {
         const section = document.getElementById(text.toLowerCase());
         if (section) section.scrollIntoView({ behavior: 'smooth' });
@@ -269,11 +277,9 @@ export function renderNavbarMobile() {
   document.body.appendChild(menu);
   document.body.appendChild(overlay);
 
-  // 🟡 SCROLL EFFECT: hide on scroll down, show on scroll up
   let lastScrollTop = 0;
   window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
-
     if (currentScroll > lastScrollTop) {
       logo.style.transform = 'translateY(-100px)';
       menuBtn.style.transform = 'translateY(-100px)';
@@ -281,7 +287,6 @@ export function renderNavbarMobile() {
       logo.style.transform = 'translateY(0)';
       menuBtn.style.transform = 'translateY(0)';
     }
-
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   });
 }

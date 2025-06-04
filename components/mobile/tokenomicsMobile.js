@@ -48,8 +48,8 @@ export function renderTokenomicsMobile() {
   // Isi Tokenomics
   const tokenomics = [
     { text: "1,000,000,000 BEAN", img: './assets/icons/supply.png' },
-    { text: "10% for Holder Reward", img: './assets/icons/reward.png' },
-    { text: "90% Community", img: './assets/icons/community.png' },
+    { text: "5% for Holder Reward", img: './assets/icons/reward.png' },
+    { text: "95% Community", img: './assets/icons/community.png' },
     { text: "Liquidity: 100% Burn", img: './assets/icons/burn.png' },
     { text: "0% Tax", img: './assets/icons/tax.png' },
     { text: "Owner Renounced", img: './assets/icons/renounced.png' },

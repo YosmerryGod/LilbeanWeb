@@ -67,8 +67,8 @@ export function renderTokenomics() {
   }
 
   const totalSupplyItems = [{ text: "1,000,000,000 BEAN", img: './assets/icons/supply.png' }];
-  const devRewardItems = [{ text: "10% for Holder Reward (DEV Buy Early)", img: './assets/icons/reward.png' }];
-  const communityItems = [{ text: "90% Community", img: './assets/icons/community.png' }];
+  const devRewardItems = [{ text: "5% for Holder Reward (DEV Buy Early)", img: './assets/icons/reward.png' }];
+  const communityItems = [{ text: "95% Community", img: './assets/icons/community.png' }];
   const burnItems = [{ text: "Liquidity: 100% Burn", img: './assets/icons/burn.png' }];
   const taxItems = [{ text: "0% Tax", img: './assets/icons/tax.png' }];
   const renouncedItems = [{ text: "Owner Renounced", img: './assets/icons/renounced.png' }];

@@ -5,7 +5,7 @@ export function renderRoadmap() {
   div.style.cssText = `
     position: absolute;
     top: 0;
-    left: -63%;
+    left: -58%;
     width: 60%;
     height: 100%;
     background: #333333;
@@ -48,70 +48,151 @@ export function renderRoadmap() {
     return box;
   }
 
-  const q1Items = [
-    "💡 Concept and Idea for Bean Coin as a community-based meme coin",
-    "✏️ Design of Bean mascot (character, colors, and meme-style identity)",
-    "🌍 Creation of official website and social media (Twitter, Telegram)",
-    "🚀 Deployment of smart contract (BEAN token) on Four.meme (BSC)",
-    "🌍 Migration from Four.meme to PancakeSwap V2"
-  ];
-  const q1Box = createQuarterBox(
-    "Q1 – Foundation and Initial Launch",
-    q1Items,
-    `background: transparent; padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgb(253, 0, 0); width: 350px; height: 200px; margin-left: -15px; margin-top: -10px;`,
-    `font-size: 20px; margin-bottom: 0.5rem; color: #FFFFFF; font-weight: bold;`,
-    `font-size: 12px; color: #FFFFFF; margin-left: -25px;`
-  );
-  div.appendChild(q1Box);
+  // Q1 – Foundation
+const q1Items = [
+  "💡 Concept and Idea for Bean Coin as a community-based meme coin",
+  "✏️ Design of Bean mascot (character, colors, and meme-style identity)",
+  "🌍 Creation of official website and social media (Twitter, Telegram)",
+  "🚀 Deployment of smart contract (BEAN token) on Four.meme (BSC)",
+  "🌍 Migration from Four.meme to PancakeSwap V2"
+];
+const q1Box = createQuarterBox(
+  "Q1 – Foundation and Initial Launch",
+  q1Items,
+  `
+    background: transparent;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(253, 0, 0);
+    width: 350px;
+    height: 200px;
+    margin-left: -15px;
+    margin-top: -10px;
+  `,
+  `
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+    font-weight: bold;
+  `,
+  `
+    font-size: 10px;
+    color: #FFFFFF;
+    margin-left: -10px;
+  `
+);
+div.appendChild(q1Box);
 
-  const q2Items = [
-    "👥 Airdrop for holders with cloud mining-based rewards",
-    "🤝 Collaborations with Influencers & Crypto Communities",
-    "📈 Listing on CoinGecko and CoinMarketCap",
-    "🎮 Launch of DApps (staking, swap)",
-    "🎨 Release of Meme Launchpad similar to Four.meme"
-  ];
-  const q2Box = createQuarterBox(
-    "Q2 – Community Expansion and Product Development",
-    q2Items,
-    `background: transparent; padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgb(52, 6, 255); width: 350px; height: 200px; margin-left: 390px; margin-top: -215px;`,
-    `font-size: 20px; margin-bottom: 0.5rem; color: #FFFFFF; font-weight: bold;`,
-    `font-size: 13.5px; color: #FFFFFF; margin-left: -25px;`
-  );
-  div.appendChild(q2Box);
+// Q2 – Community Expansion
+const q2Items = [
+  "👥 Airdrop for holders with cloud mining-based rewards",
+  "🤝 Collaborations with Influencers & Crypto Communities",
+  "📈 Listing on CoinGecko and CoinMarketCap",
+  "🎮 Launch of DApps (staking, swap)",
+  "🎨 Release of Meme Launchpad similar to Four.meme"
+];
+const q2Box = createQuarterBox(
+  "Q2 – Community Expansion and Product Development",
+  q2Items,
+  `
+    background: transparent;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(52, 6, 255);
+    width: 350px;
+    height: 200px;
+    margin-left: 350px;
+    margin-top: -200px;
+  `,
+  `
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+    font-weight: bold;
+  `,
+  `
+    font-size: 11px;
+    color: #FFFFFF;
+    margin-left: -15px;
+  `
+);
+div.appendChild(q2Box);
 
-  const q3Items = [
-    "🌍 Expansion of Community to Global Scale",
-    "💎 Staking Rewards & Farming Pool",
-    "🎨 Release of NFT Collection and Claim Functionality",
-    "🌕 Listing on CEX (Centralized Exchange)",
-    "🕹️ Enhanced DApps with new features",
-    "💬 Increased Community Engagement (events, contests)"
-  ];
-  const q3Box = createQuarterBox(
-    "Q3 – Growth and Innovation",
-    q3Items,
-    `background: transparent; padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgb(38, 255, 0); width: 350px; height: 200px; margin-left: -15px; margin-top: -50px;`,
-    `font-size: 20px; margin-bottom: 0.5rem; color: #FFFFFF; font-weight: bold;`,
-    `font-size: 14px; color: #FFFFFF; margin-left: -25px;`
-  );
-  div.appendChild(q3Box);
+// Q3 – Growth
+const q3Items = [
+  "🌍 Expansion of Community to Global Scale",
+  "💎 Staking Rewards & Farming Pool",
+  "🎨 Release of NFT Collection and Claim Functionality",
+  "🌕 Listing on CEX (Centralized Exchange)",
+  "🕹️ Enhanced DApps with new features",
+  "💬 Increased Community Engagement (events, contests)"
+];
+const q3Box = createQuarterBox(
+  "Q3 – Growth and Innovation",
+  q3Items,
+  `
+    background: transparent;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(38, 255, 0);
+    width: 350px;
+    height: 200px;
+    margin-left: -15px;
+    margin-top: 30px;
+  `,
+  `
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+    font-weight: bold;
+  `,
+  `
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-left: -10px;
+  `
+);
+div.appendChild(q3Box);
 
-  const q4Items = [
-    "🎭 Meme Festival Events (Online & Offline)",
-    "🚀 Release of Open-Source Ecosystem for Developers",
-    "🌐 Cross-Chain Integration with other blockchains",
-    "🎮 DApps Upgrades (new DeFi features)",
-    "📈 Expansion of CEX Listings (Tier-2 Exchanges)"
-  ];
-  const q4Box = createQuarterBox(
-    "Q4 – Ecosystem Strengthening and Branding",
-    q4Items,
-    `background: transparent; padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgb(255, 0, 200); width: 350px; height: 200px; margin-left: 390px; margin-top: -215px;`,
-    `font-size: 20px; margin-bottom: 0.5rem; color: #FFFFFF; font-weight: bold;`,
-    `font-size: 14px; color: #FFFFFF; margin-left: -25px;`
-  );
-  div.appendChild(q4Box);
+// Q4 – Ecosystem & Branding
+const q4Items = [
+  "🎭 Meme Festival Events (Online & Offline)",
+  "🚀 Release of Open-Source Ecosystem for Developers",
+  "🌐 Cross-Chain Integration with other blockchains",
+  "🎮 DApps Upgrades (new DeFi features)",
+  "📈 Expansion of CEX Listings (Tier-2 Exchanges)"
+];
+const q4Box = createQuarterBox(
+  "Q4 – Ecosystem Strengthening and Branding",
+  q4Items,
+  `
+    background: transparent;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(255, 0, 200);
+    width: 350px;
+    height: 200px;
+    margin-left: 350px;
+    margin-top: -200px;
+  `,
+  `
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+    font-weight: bold;
+  `,
+  `
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-left: -15px;
+  `
+);
+div.appendChild(q4Box);
+
 
   return div;
 }

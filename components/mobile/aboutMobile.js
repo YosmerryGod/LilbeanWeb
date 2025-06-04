@@ -51,7 +51,7 @@ export function renderAboutMobile() {
   section.className = 'about-mobile-section';
   section.style.cssText = `
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,11 +76,10 @@ export function renderAboutMobile() {
 
   const desc = document.createElement('p');
   desc.innerHTML = `
-    Lil Bean is not just a coin.<br/>
-    He’s a golden bean with a dumb smile, zero roadmap, and too much confidence.<br/><br/>
-    Powered by community. Fueled by memes. Backed by absolutely nothing.<br/><br/>
-    No promises. No team. Just vibes.<br/>
-    If you’re here, you’re early. If you’re holding, you’re family.
+        LilBean isn't just a token — he's the mascot of an AI-powered, meme-fueled crypto revolution.<br/>
+Born from chaos and built on BNB, LilBean represents the spirit of decentralization, humor, and fearless experimentation.<br/><br/>
+There’s no VC, no CEO, no fancy headquarters — only memes, community, and autonomous AI driving it forward.<br/><br/>
+Whether you’re here to stake, laugh, build, or just hold, welcome to the beanverse.
   `;
   desc.style.cssText = `
     color: white;
