@@ -3,20 +3,16 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ✅ Redirect naked domain → www
+// 🌐 Redirect all non-www and non-https to https://www.lilbean.fun
 app.use((req, res, next) => {
   const host = req.headers.host;
-  if (host === 'lilbean.fun') {
+  const proto = req.headers['x-forwarded-proto'];
+
+  // Redirect if not https or not www
+  if (proto !== 'https' || host === 'lilbean.fun') {
     return res.redirect(301, `https://www.lilbean.fun${req.url}`);
   }
-  next();
-});
 
-// ⛔ Redirect HTTP → HTTPS
-app.use((req, res, next) => {
-  if (req.headers['x-forwarded-proto'] !== 'https') {
-    return res.redirect(`https://${req.headers.host}${req.url}`);
-  }
   next();
 });
 
