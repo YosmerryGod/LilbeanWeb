@@ -1,4 +1,8 @@
 export function renderWhitepaper() {
+
+    document.body.innerHTML = '';
+  window.scrollTo(0, 0); 
+  
   const part = document.createElement('div');
   part.className = 'part px-6 py-8 bg-[#1a1a1a] text-white font-sans leading-relaxed';
 
