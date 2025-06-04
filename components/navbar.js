@@ -1,4 +1,5 @@
 import { renderSwap } from './swap.js';
+import { renderWhitepaper } from './whitepaper.js';
 
 export function renderNavbar() {
   const style = document.createElement('style');
@@ -132,13 +133,18 @@ export function renderNavbar() {
       const section = document.getElementById(target);
 
       if (item.text === 'ROADMAP') {
-        import('.roadmap.js').then(mod => {
+        import('./roadmap.js').then(mod => {
           openSidebar(mod.renderRoadmapMobile());
         });
       } else if (item.text === 'TOKENOMICS') {
-        import('.tokenomics.js').then(mod => {
+        import('./tokenomics.js').then(mod => {
           openSidebar(mod.renderTokenomicsMobile());
         });
+      } else if (item.text === 'WHITEPAPER') {
+        history.pushState(null, '', '/whitepaper');
+        sidebar.style.top = '-60vh';
+        overlay.style.display = 'none';
+        renderWhitepaper();
       } else if (section) {
         sidebar.style.top = '-60vh';
         overlay.style.display = 'none';

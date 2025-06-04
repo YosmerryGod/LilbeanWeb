@@ -69,9 +69,9 @@ export function renderCommunityMobile() {
   const socialIcons = document.createElement('div');
   socialIcons.style.cssText = `display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;`;
   const socials = [
-  { href: 'https://twitter.com/lilbeanBSC', img: './assets/twitter1.png', alt: 'Twitter' },
-  { href: 'https://t.me/lilbeanFun', img: './assets/telegram1.png', alt: 'Telegram' },
-  { href: 'https://instagram.com/LilbeanFun', img: './assets/instagram1.png', alt: 'Instagram' }
+  { href: 'https://twitter.com/lilbeanBSC', img: './assets/mobile/twitterMobile.png', alt: 'Twitter' },
+  { href: 'https://t.me/lilbeanFun', img: './assets/mobile/telegramMobile.png', alt: 'Telegram' },
+  { href: 'https://instagram.com/LilbeanFun', img: './assets/mobile/instagramMobile.png', alt: 'Instagram' }
 ];
 
 socials.forEach(social => {

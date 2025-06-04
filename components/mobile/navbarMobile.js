@@ -230,9 +230,9 @@ export function renderNavbarMobile() {
   social.className = 'social-row';
 
   const socialLinks = [
-    { href: 'https://twitter.com/lilbeanBSC', img: './assets/twitter.png', alt: 'Twitter' },
-    { href: 'https://t.me/lilbeanFun', img: './assets/telegram.png', alt: 'Telegram' },
-    { href: 'https://instagram.com/LilbeanFun', img: './assets/instagram.png', alt: 'Instagram' }
+    { href: 'https://twitter.com/lilbeanBSC', img: './assets/mobile/twitterMobile.png', alt: 'Twitter' },
+    { href: 'https://t.me/lilbeanFun', img: './assets/mobile/telegramMobile.png', alt: 'Telegram' },
+    { href: 'https://instagram.com/LilbeanFun', img: './assets/mobile/instagramMobile.png', alt: 'Instagram' }
   ];
 
   socialLinks.forEach(({ href, img, alt }) => {

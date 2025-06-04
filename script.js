@@ -12,10 +12,16 @@ import { renderCommunity } from './components/community.js';
 import { renderCommunityMobile } from './components/mobile/communityMobile.js';
 import { renderFooter } from './components/footer.js';
 import { renderLoading } from './components/loading.js';
+import { renderWhitepaper } from './components/whitepaper.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
   const isMobile = window.innerWidth <= 768;
+
+  if (window.location.pathname === '/whitepaper') {
+    renderWhitepaper(); // render langsung kalau buka /whitepaper
+    return;
+  }
 
   if (isMobile) {
     renderNavbarMobile();
@@ -24,17 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTokenInfoMobile();
     renderGalleryMobile();
     renderCommunityMobile();
-
   } else {
     renderNavbar();
     renderHero();
     renderAbout();
-     renderTokenInfo();
-  renderGallery();
-  renderCommunity();
+    renderTokenInfo();
+    renderGallery();
+    renderCommunity();
   }
 
-  
- 
   renderLoading();
 });
+
