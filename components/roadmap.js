@@ -50,11 +50,11 @@ export function renderRoadmap() {
 
   // Q1 – Foundation
 const q1Items = [
-  "💡 Concept and Idea for Bean Coin as a community-based meme coin",
-  "✏️ Design of Bean mascot (character, colors, and meme-style identity)",
-  "🌍 Creation of official website and social media (Twitter, Telegram)",
-  "🚀 Deployment of smart contract (BEAN token) on Four.meme (BSC)",
-  "🌍 Migration from Four.meme to PancakeSwap V2"
+  "✔ Concept and Idea for Bean Coin as a community-based meme coin",
+  "✔ Design of Bean mascot (character, colors, and meme-style identity)",
+  "✔ Creation of official website and social media (Twitter, Telegram)",
+  "✔ Deployment of smart contract (BEAN token) on Four.meme (BSC)",
+  "✔ Migration from Four.meme to PancakeSwap V2"
 ];
 const q1Box = createQuarterBox(
   "Q1 – Foundation and Initial Launch",

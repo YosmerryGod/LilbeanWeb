@@ -26,7 +26,6 @@ export function renderWhitepaper() {
         <ul class="list-disc pl-6 text-lg space-y-1">
           <li><strong>Token Name:</strong> LilBean</li>
           <li><strong>Blockchain:</strong> BNB Smart Chain (BEP-20)</li>
-          <li><strong>Launch:</strong> 8 June, 15:00 UTC</li>
           <li><strong>Total Supply:</strong> 1,000,000,000</li>
           <li><strong>Tax:</strong> 0% Buy & Sell</li>
           <li><strong>Liquidity:</strong> Permanently Burned</li>

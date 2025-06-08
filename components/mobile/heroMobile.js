@@ -65,7 +65,7 @@ POWERED BY MEMES. GOVERNED BY CHAOS.
   `;
 
   const caText = document.createElement('span');
-  caText.textContent = '0x00000dead';
+  caText.textContent = '0xad48c1cebd08841203fd866c7dc660a81e704444';
   caText.id = 'contract-address';
 
   const copyBtn = document.createElement('button');
