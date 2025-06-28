@@ -3,18 +3,22 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// 🌐 Redirect all non-www and non-https to https://www.lilbean.fun
-app.use((req, res, next) => {
-  const host = req.headers.host;
-  const proto = req.headers['x-forwarded-proto'];
+// Cek apakah environment production
+const isProduction = process.env.NODE_ENV === 'production';
 
-  // Redirect if not https or not www
-  if (proto !== 'https' || host === 'lilbean.fun') {
-    return res.redirect(301, `https://www.lilbean.fun${req.url}`);
-  }
+// 🌐 Redirect all non-www and non-https to https://www.lilbean.fun (hanya jika production)
+if (isProduction) {
+  app.use((req, res, next) => {
+    const host = req.headers.host;
+    const proto = req.headers['x-forwarded-proto'];
 
-  next();
-});
+    if (proto !== 'https' || host === 'lilbean.fun') {
+      return res.redirect(301, `https://www.lilbean.fun${req.url}`);
+    }
+
+    next();
+  });
+}
 
 // ✅ Serve static files
 app.use(express.static(path.join(__dirname)));

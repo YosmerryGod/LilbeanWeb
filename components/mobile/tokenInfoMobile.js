@@ -60,68 +60,68 @@ export function renderTokenInfoMobile() {
   document.body.appendChild(section);
 
   // SIDEBAR
-  let sidebar = document.getElementById('sidebar');
-  if (!sidebar) {
-    sidebar = document.createElement('div');
-    sidebar.id = 'sidebar';
-    sidebar.style.cssText = `
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background: white;
-      box-shadow: -2px 0 10px rgba(0,0,0,0.3);
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      z-index: 999;
-      overflow-y: auto;
-    `;
-    document.body.appendChild(sidebar);
-  }
+  // let sidebar = document.getElementById('sidebar');
+  // if (!sidebar) {
+  //   sidebar = document.createElement('div');
+  //   sidebar.id = 'sidebar';
+  //   sidebar.style.cssText = `
+  //     position: fixed;
+  //     top: 0;
+  //     right: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     background: white;
+  //     box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  //     transform: translateX(100%);
+  //     transition: transform 0.3s ease;
+  //     z-index: 999;
+  //     overflow-y: auto;
+  //   `;
+  //   document.body.appendChild(sidebar);
+  // }
 
-  function openSidebar(contentNode) {
-    sidebar.innerHTML = '';
+  // function openSidebar(contentNode) {
+  //   sidebar.innerHTML = '';
 
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = '✖️';
-    closeBtn.style.cssText = `
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-    `;
-    closeBtn.onclick = () => {
-      sidebar.style.transform = 'translateX(100%)';
-    };
+  //   const closeBtn = document.createElement('button');
+  //   closeBtn.textContent = '✖️';
+  //   closeBtn.style.cssText = `
+  //     position: absolute;
+  //     top: 1rem;
+  //     right: 1rem;
+  //     background: none;
+  //     border: none;
+  //     font-size: 2rem;
+  //     cursor: pointer;
+  //   `;
+  //   closeBtn.onclick = () => {
+  //     sidebar.style.transform = 'translateX(100%)';
+  //   };
 
-    sidebar.appendChild(closeBtn);
-    sidebar.appendChild(contentNode);
-    sidebar.style.transform = 'translateX(0)';
-  }
+  //   sidebar.appendChild(closeBtn);
+  //   sidebar.appendChild(contentNode);
+  //   sidebar.style.transform = 'translateX(0)';
+  // }
 
-  // === Swipe Gesture Kiri-Kanan ===
-  let startX = null;
-  container.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
+  // // === Swipe Gesture Kiri-Kanan ===
+  // let startX = null;
+  // container.addEventListener('touchstart', (e) => {
+  //   startX = e.touches[0].clientX;
+  // });
 
-  container.addEventListener('touchend', (e) => {
-    if (startX === null) return;
-    const endX = e.changedTouches[0].clientX;
-    const deltaX = startX - endX;
+  // container.addEventListener('touchend', (e) => {
+  //   if (startX === null) return;
+  //   const endX = e.changedTouches[0].clientX;
+  //   const deltaX = startX - endX;
 
-    if (deltaX > 50) {
-      // Swipe ke kiri → buka Tokenomics
-      openSidebar(renderTokenomicsMobile());
-    } else if (deltaX < -50) {
-      // Swipe ke kanan → buka Roadmap
-      openSidebar(renderRoadmapMobile());
-    }
+  //   if (deltaX > 50) {
+  //     // Swipe ke kiri → buka Tokenomics
+  //     openSidebar(renderTokenomicsMobile());
+  //   } else if (deltaX < -50) {
+  //     // Swipe ke kanan → buka Roadmap
+  //     openSidebar(renderRoadmapMobile());
+  //   }
 
-    startX = null;
-  });
+  //   startX = null;
+  // });
 }

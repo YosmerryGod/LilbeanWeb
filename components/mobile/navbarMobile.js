@@ -5,10 +5,10 @@ export function renderNavbarMobile() {
   style.textContent = `
     .nav-logo {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      height: 56px;
-      width: 56px;
+      top: 3%;
+      left: 10%;
+      height: 60px;
+      width: 60px;
       border-radius: 50%;
       object-fit: cover;
       z-index: 1001;
@@ -17,9 +17,9 @@ export function renderNavbarMobile() {
 
     .nav-hamburger {
       position: fixed;
-      top: 20px;
-      right: 20px;
-      font-size: 2.3rem;
+      top: 3.5%;
+      right: 10%;
+      font-size: 1.8rem;
       color: white;
       background: orange;
       border: none;
@@ -148,21 +148,23 @@ export function renderNavbarMobile() {
     if (!sidebar) {
       sidebar = document.createElement('div');
       sidebar.id = 'sidebar';
-      sidebar.style.cssText = `
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 80%;
-        height: 100%;
-        background: white;
-        box-shadow: -2px 0 10px rgba(0,0,0,0.3);
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 999;
-        overflow-y: auto;
-      `;
       document.body.appendChild(sidebar);
     }
+
+    // Selalu update style meski sidebar sudah ada
+    sidebar.style.cssText = `
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100dvw;
+      height: 100dvh;
+      background: white;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 999;
+      overflow-y: auto;
+    `;
 
     sidebar.innerHTML = '';
 
@@ -181,6 +183,7 @@ export function renderNavbarMobile() {
 
     sidebar.appendChild(close);
     sidebar.appendChild(node);
+
     sidebar.style.transform = 'translateX(0)';
   }
 
