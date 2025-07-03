@@ -72,7 +72,7 @@ export function renderHeroMobile() {
   `;
 
   const caText = document.createElement('span');
-  const fullAddress = '0x0000dead';
+  const fullAddress = '0x1518c970197433cad2a7dba4616ddb19a7384444';
   const shortAddress = `${fullAddress.slice(0, 6)}...${fullAddress.slice(-4)}`;
 
   caText.textContent = shortAddress;
